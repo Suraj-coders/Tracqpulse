@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracqpulse - Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Style/style.css">
+  </head>
+  <body class="bg-white">
+    <!-- HEADER (same as before) -->
+    <header class="!sticky !top-0 !left-0 !right-0 w-full bg-white shadow-sm z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-2 sm:px-3 lg:px-10 h-[70px]">
+
+    <!-- Logo -->
+    <a href="./index.html" class="flex items-center flex-shrink-0">
+      <img src="./assets/logo.png" alt="Tracqpulse" class="h-[45px] w-auto max-w-[250px]">
+    </a>
+
+    <!-- Desktop nav (only lg and above) -->
+    <nav class="hidden lg:flex items-center space-x-8 font-medium">
+      <a href="./index.html" class="hover:text-[#019ad6]">Home</a>
+      <a href="./feature.html" class="hover:text-[#019ad6]">Features</a>
+      <a href="./pricing.html" class="hover:text-[#019ad6]">Pricing</a>
+
+      <!-- Resources -->
+      <div class="relative group">
+        <button class="hover:text-[#019ad6] group-hover:text-[#019ad6] flex items-center h-20">
+          Resources
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="absolute top-[75px] left-0 hidden group-hover:flex flex-col bg-white shadow-lg rounded-md w-44 opacity-0 group-hover:opacity-100 transition-all duration-200">
+          <a href="./blog.html" class="px-3 py-2 text-gray-700 hover:text-[#019ad6] bg-gray-50">Blog</a>
+        </div>
+      </div>
+
+      <a href="./contact-us.html" class="hover:text-[#019ad6]">Contact Us</a>
+
+      <!-- Company -->
+      <div class="relative group">
+        <button class="text-[#019ad6] group-hover:text-[#019ad6] flex items-center h-20">
+          Company
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="absolute top-[75px] left-0 hidden group-hover:flex flex-col bg-white shadow-lg rounded-md w-48 opacity-0 group-hover:opacity-100 transition-all duration-200">
+          <a href="./company.html" class="px-4 py-2 text-gray-700 hover:text-[#019ad6] bg-gray-50">Who We Are</a>
+          <a href="./work.html" class="px-4 py-2 text-gray-700 hover:text-[#019ad6] bg-gray-50">Work With Us</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hamburger (show below lg) -->
+    <button id="menu-toggle" aria-expanded="false" class="lg:hidden ml-auto mr-2 grid gap-1">
+      <span class="bar block w-6 h-0.5 bg-orange-500"></span>
+      <span class="bar block w-6 h-0.5 bg-orange-500"></span>
+      <span class="bar block w-6 h-0.5 bg-orange-500"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu (show below lg) -->
+  <div id="mobile-menu"
+       class="lg:hidden absolute inset-x-0 top-full bg-white border-t border-gray-200 shadow-md
+              transform origin-top scale-y-0 opacity-0 pointer-events-none
+              transition-all duration-300 ease-out">
+    <div class="px-6 py-4 flex flex-col space-y-4 font-medium">
+      <a href="./index.html" class="hover:text-[#019ad6]">Home</a>
+      <a href="./feature.html" class="hover:text-[#019ad6]">Features</a>
+      <a href="./pricing.html" class="hover:text-[#019ad6]">Pricing</a>
+
+      <div>
+        <button onclick="toggleDropdown('resources')" class="flex items-center w-full text-left hover:text-[#019ad6]">
+          Resources
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="dropdown-resources" class="hidden flex-col pl-4">
+          <a href="./blog.html" class="block py-2 text-gray-700 hover:text-[#019ad6]">Blog</a>
+        </div>
+      </div>
+
+      <a href="./contact-us.html" class="hover:text-[#019ad6]">Contact Us</a>
+
+      <div>
+        <button onclick="toggleDropdown('company')" class="flex items-center w-full text-left text-[#019ad6]">
+          Company
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="dropdown-company" class="hidden flex-col pl-4">
+          <a href="./company.html" class="block py-2 text-gray-700 hover:text-[#019ad6]">Who We Are</a>
+          <a href="./work.html" class="block py-2 text-gray-700 hover:text-[#019ad6]">Work With Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <section class="relative">
+   
+      <div
+        class="bg-[url('./assets/signup-bg.jpg')] bg-cover bg-center bg-fixed"
+      >
+        <div class="bg-[rgba(15,37,60,0.89)]/80 py-16">
+          <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl text-white">
+              Tracqpulse: Performance Marketing Platform
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meet Our Team Section -->
+      <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-12 py-10 lg:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <!-- Left Text -->
+          <div class=" pr-0 md:pr-6">
+            <h3 class="text-2xl md:text-4xl mb-3 md:mb-6 text-[#2f2f2f]">Meet our team</h3>
+            <p class="text-[#585858] leading-relaxed text-md md:text-lg">
+              We are an experienced group of professionals with more than 20
+              years of experience in digital marketing, tracking technologies
+              and building enterprise platforms. We put together our experience
+              and team effort to create Tracqpulse – a comprehensive solution
+              for networks, affiliates and advertisers.
+            </p>
+          </div>
+
+          <div class="flex justify-center masked-container overflow-hidden">
+          
+            <div>
+              <img
+                src="./assets/pic159.jpg"
+                alt="Our Team"
+                class="rounded-md shadow-md w-full max-w-lg h-full md:h-[280px] object-cover"
+              />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+<footer class="bg-gray-50 border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 md:px-10 pt-12 pb-6">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <!-- Column 1 -->
+          <div
+            class="md:col-span-2" >
+            <h3 class="text-lg text-[#373737] mb-4">About Us</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              We are an experienced group of professionals with more than 20
+              years of experience in digital marketing, tracking technologies
+              and building enterprise platforms.
+            </p>
+            <p class="flex items-center text-gray-700 text-sm">
+              <i class="fa-solid fa-envelope text-gray-500 mr-2"></i>
+              <span>support@email.com</span>
+            </p>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="text-lg mb-4 text-[#373737]">Resources</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="./blog.html" class="hover:text-[#019ad6]">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="text-lg  mb-4 text-[#373737]">Quick Links</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>
+                <a href="./terms-condition.html" class="hover:text-[#019ad6]">Terms & Condition</a>
+              </li>
+              <li>
+                <a href="./privacy-policies.html" class="hover:text-[#019ad6]">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="./user.html" class="hover:text-[#019ad6]">User Agreement</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="text-lg mb-4 text-[#373737]">Company</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="./company.html" class="hover:text-[#019ad6]">Who We Are</a></li>
+              <li><a href="./work.html" class="hover:text-[#019ad6]">Work With Us</a></li>
+              <li><a href="./contact-us.html" class="hover:text-[#019ad6]">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Text -->
+        <div
+          class="border-t border-gray-300 mt-8 pt-6 text-center text-sm text-gray-500 ">
+          Copyright @2025 <span class="font-semibold">Tracqpulse</span> | All
+          Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="./Script/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tracqpulse</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./Style/style.css">
+
+</head>
+<body class="bg-white">
+
+  <!-- HEADER -->
+ <header class="!sticky !top-0 !left-0 !right-0 w-full bg-white shadow-sm z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-2 sm:px-3 lg:px-10 h-[70px]">
+
+    <!-- Logo -->
+    <a href="./index.html" class="flex items-center flex-shrink-0">
+      <img src="./assets/logo.png" alt="Tracqpulse" class="h-[45px] w-auto max-w-[250px]">
+    </a>
+
+    <!-- Desktop nav (only lg and above) -->
+    <nav class="hidden lg:flex items-center space-x-8 font-medium">
+      <a href="./index.html" class="text-[#019ad6]">Home</a>
+      <a href="./feature.html" class="hover:text-[#019ad6]">Features</a>
+      <a href="./pricing.html" class="hover:text-[#019ad6]">Pricing</a>
+
+      <!-- Resources -->
+      <div class="relative group">
+        <button class="hover:text-[#019ad6] group-hover:text-[#019ad6] flex items-center h-20">
+          Resources
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="absolute top-[75px] left-0 hidden group-hover:flex flex-col bg-white shadow-lg rounded-md w-44 opacity-0 group-hover:opacity-100 transition-all duration-200">
+          <a href="./blog.html" class="px-3 py-2 text-gray-700 hover:text-[#019ad6] bg-gray-50">Blog</a>
+        </div>
+      </div>
+
+      <a href="./contact-us.html" class="hover:text-[#019ad6]">Contact Us</a>
+
+      <!-- Company -->
+      <div class="relative group">
+        <button class="hover:text-[#019ad6] group-hover:text-[#019ad6] flex items-center h-20">
+          Company
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="absolute top-[75px] left-0 hidden group-hover:flex flex-col bg-white shadow-lg rounded-md w-48 opacity-0 group-hover:opacity-100 transition-all duration-200">
+          <a href="./company.html" class="px-4 py-2 text-gray-700 hover:text-[#019ad6] bg-gray-50">Who We Are</a>
+          <a href="./work.html" class="px-4 py-2 text-gray-700 hover:text-[#019ad6] bg-gray-50">Work With Us</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hamburger (show below lg) -->
+    <button id="menu-toggle" aria-expanded="false" class="lg:hidden ml-auto mr-2 grid gap-1">
+      <span class="bar block w-6 h-0.5 bg-orange-500"></span>
+      <span class="bar block w-6 h-0.5 bg-orange-500"></span>
+      <span class="bar block w-6 h-0.5 bg-orange-500"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu (show below lg) -->
+  <div id="mobile-menu"
+       class="lg:hidden absolute inset-x-0 top-full bg-white border-t border-gray-200 shadow-md
+              transform origin-top scale-y-0 opacity-0 pointer-events-none
+              transition-all duration-300 ease-out">
+    <div class="px-6 py-4 flex flex-col space-y-4 font-medium">
+      <a href="./index.html" class="text-[#019ad6]">Home</a>
+      <a href="./feature.html" class="hover:text-[#019ad6]">Features</a>
+      <a href="./pricing.html" class="hover:text-[#019ad6]">Pricing</a>
+
+      <div>
+        <button onclick="toggleDropdown('resources')" class="flex items-center w-full text-left hover:text-[#019ad6]">
+          Resources
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="dropdown-resources" class="hidden flex-col pl-4">
+          <a href="./blog.html" class="block py-2 text-gray-700 hover:text-[#019ad6]">Blog</a>
+        </div>
+      </div>
+
+      <a href="./contact-us.html" class="hover:text-[#019ad6]">Contact Us</a>
+
+      <div>
+        <button onclick="toggleDropdown('company')" class="flex items-center w-full text-left hover:text-[#019ad6]">
+          Company
+          <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div id="dropdown-company" class="hidden flex-col pl-4">
+          <a href="./company.html" class="block py-2 text-gray-700 hover:text-[#019ad6]">Who We Are</a>
+          <a href="./work.html" class="block py-2 text-gray-700 hover:text-[#019ad6]">Work With Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- HERO SECTION -->
+<section class="bg-[#fbfbfb] py-8 lg:py-20 overflow-hidden md:overflow-none">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12 mb-6">
+    <div class="flex-1 mb-4">
+      <h1 class="text-3xl lg:text-[42px] leading-tight font-semibold text-[#202020] mb-4 md:mb-6">
+        Tracqpulse: The <br>
+        Leading Performance <br>
+        Marketing Platform
+      </h1>
+      <p class="text-[#6b6b6b] text-md md:text-lg mb-3 md:mb-5 leading-snug ">
+        Tracqpulse is an enterprise class performance marketing platform <br class="hidden lg:block">
+        to manage your affiliate business with ease.
+      </p>
+      <p class="text-[#6b6b6b] text-md md:text-lg mb-6 md:mb-8 leading-snug ">
+        Improve your business conversions with real time smart insights, <br class="hidden lg:block">
+        powered with AI backed feature and advance anti-fraud system.
+      </p>
+      <a href="./contact-us.html"><button class="hover:bg-[#019ad6] text-white px-4 md:px-8 py-2 md:py-4 rounded-md font-semibold shadow bg-[#0466ab] transition ">
+        Get Started Now →
+      </button></a>
+    </div>
+
+    <div class="flex-1 relative flex items-center justify-center mt-16 mb-16 md:mb-0 md:mt-0">
+      <div>
+        <div class="holderCircle hidden md:block ">
+          <div class="dotCircle">
+          <span class="itemDot itemDot1 active" data-tab="1">
+            <img src="./assets/insight.png" alt="Insight Icon">
+          </span>
+          <span class="itemDot itemDot2" data-tab="2">
+            <img src="./assets/tracking.png" alt="Tracking Icon">
+          </span>
+          <span class="itemDot itemDot3" data-tab="3">
+            <img src="./assets/links.png" alt="Links Icon">
+          </span>
+          <span class="itemDot itemDot4" data-tab="4">
+            <img src="./assets/fraud.png" alt="Fraud Icon">
+          </span>
+          <span class="itemDot itemDot5" data-tab="5">
+            <img src="./assets/Infra.png" alt="Infrastructure Icon">
+          </span>
+          <span class="itemDot itemDot6" data-tab="6">
+            <img src="./assets/Advert.png" alt="Advertisers Icon">
+          </span>
+        </div>
+        </div>
+
+        <div class="contentCircle overflow-hidden md:oveflow-none ">
+          <div class="CirItem active CirItem1">
+            <img src="./assets/insight.png" alt="Insight Icon" class="cir-icon">
+            <h2>Real-time Smart Insights</h2>
+            <p >Detailed compilation of granular data and in-depth information to help you optimize your campaign activities, analyse the performance better and plan for your future campaigns.</p>
+          </div>
+          <div class="CirItem CirItem2">
+            <img src="./assets/tracking.png" alt="Tracking Icon" class="cir-icon">
+            <h2>Robust and Secure Tracking</h2>
+            <p>Reliable and accurate tracking mechanism that is absolutely hack-proof and creates a comprehensive picture of your campaign journey.</p>
+          </div>
+          <div class="CirItem CirItem3">
+            <img src="./assets/links.png" alt="Links Icon" class="cir-icon">
+            <h2>Smart Links</h2>
+            <p>At Tracqpulse, we prioritise the convenience and ease of affiliate marketing before anything. Introducing smart links to automate and compile all the links to measure campaign growth.</p>
+          </div>
+          <div class="CirItem CirItem4">
+            <img src="./assets/fraud.png" alt="Fraud Icon" class="cir-icon">
+            <h2>Fraud Detection</h2>
+            <p>Our advanced AI supported fraud detection mechanism is designed to safeguard your marketing campaigns from fraud partner profiles, fraud partner activities or any other deceitful activities.</p>
+          </div>
+          <div class="CirItem CirItem5">
+            <img src="./assets/Infra.png" alt="Infrastructure Icon" class="cir-icon">
+            <h2>Infinite Scalability Infrastructure</h2>
+            <p>Our state-of-the-art infrastructure with 99.9% uptime server supports geographically distributed networks to allow highly reliable scalability.</p>
+          </div>
+          <div class="CirItem CirItem6">
+            <img src="./assets/Advert.png" alt="Advertisers Icon" class="cir-icon">
+            <h2>Affiliates & Advertisers <br> Management</h2>
+            <p>We brings the learning curve down by providing a tailor-made user friendly platform to make sure that you focus only on making the most out of your partner marketing campaigns without any hassle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="bg-white py-8 md:py-20">
+  <div class="container mx-auto px-4 md:px-6 lg:px-30 text-center overflow-hidden">
+    
+    <!-- Title -->
+    <h2 class="text-xl sm:text-2xl md:text-4xl font-semibold text-gray-900">
+      A Robust Platform To Successfully <br /> Run and Grow Your Affiliate Business
+    </h2>
+    <p class="text-gray-600 mt-4 md:max-w-3xl mx-auto">
+      Tracqpulse offers a robust SaaS platform to scale your affiliate business with ease.
+    </p>
+    <p class="text-gray-600 md:max-w-3xl mx-auto">
+      The platform offers comprehensive advance analytics and real time tracking
+    </p>
+    <p class="text-gray-600 md:max-w-3xl mx-auto">
+      capabilities to help affiliate optimize the network performance.
+    </p>
+
+    <!-- Cards -->
+    <div class="mt-8 md:mt-16 flex flex-col lg:flex-row justify-center items-stretch gap-10 overflow-hidden">
+      
+      <!-- Card 1 -->
+      <div class="group relative bg-white w-full lg:w-[455px] shadow-lg border border-gray-100 p-3 md:p-6 text-center rounded-sm overflow-hidden transition hover:shadow-xl flex flex-col" >
+        <span class="absolute top-0 left-0 h-[3px] w-0 bg-[#019ad6] transition-all duration-500 group-hover:w-1/2"></span>
+        <span class="absolute bottom-0 right-0 h-[3px] w-0 bg-[#019ad6] transition-all duration-500 group-hover:w-1/2"></span>
+
+        <div class="flex-1">
+          <div class="flex justify-center mb-4">
+            <img src="./assets/advertiser.png" alt="Advertiser" class="w-16 h-15">
+          </div>
+          <h3 class="text-lg md:text-xl font-semibold text-[#3f3f3f] mb-4">For Advertiser</h3>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Tracqpulse allows you to create a seamless experience for managing your affiliates and networks.
+            It has all the tools and features you need to optimize your affiliate business.
+            Contact us for 1 to 1 discussion.
+          </p>
+          <a href="./contact-us.html"><button class="bg-[#0466ab] hover:bg-[#019ad6] text-white px-3 py-2 text-sm rounded-md shadow-md"> Contact Us </button></a>
+        </div>
+
+       
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group relative bg-white w-full lg:w-[455px] rounded-sm shadow-lg p-6 text-center border border-gray-100 overflow-hidden transition hover:shadow-xl flex flex-col" >
+        <span class="absolute top-0 left-0 h-[3px] w-0 bg-[#019ad6] transition-all duration-500 group-hover:w-1/2"></span>
+        <span class="absolute bottom-0 right-0 h-[3px] w-0 bg-[#019ad6] transition-all duration-500 group-hover:w-1/2"></span>
+
+        <div class="flex-1">
+          <div class="flex justify-center mb-4">
+            <img src="./assets/network.png" alt="Affiliate Network" class="w-16 h-15">
+          </div>
+          <h3 class="text-lg md:text-xl font-semibold text-[#3f3f3f] mb-4">For Affiliate Network</h3>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            OffersTarget provides you with a robust and scalable solution for managing your offers
+            and growing publishers. Streamline your payouts to build trust with your publishers.
+            Contact us for 1 to 1 discussion.
+          </p>
+          <a href="./contact-us.html"><button class="bg-[#0466ab] hover:bg-[#019ad6] text-white px-3 py-2 text-sm rounded-md shadow-md"> Contact Us </button></a>
+        </div>
+
+        
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="bg-white py-4 md:py-8 lg:py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-5 lg:px-10">
+    <div 
+      id="testimonial-slider" 
+      class="relative bg-[#fbfbfb] shadow rounded-xl pt-6 sm:pt-8 pb-10 text-center overflow-hidden"
+    >
+      <!-- Quote Icon -->
+      <img src="./assets/quote-ico.png" alt="" 
+           class="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4">
+
+      <!-- Track -->
+      <div 
+        id="testimonial-track" 
+        class="flex transition-transform duration-700 ease-in-out mt-4 sm:mt-6"  
+      >
+        <!-- Testimonial 1 -->
+        <div class="slide w-full px-6  sm:px-12 md:px-20">
+          <p class="text-gray-700 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
+            "Customer service at Tracqpulse is incredible that makes them a delight to work with and truly certifies our decision 
+            <br class="hidden md:block"> 
+            to make them our perpetual growth partner."
+          </p>
+          <p class="text-[#019ad6] italic font-medium text-sm sm:text-base">
+            Karan Bhardwaj, Head Affiliate Marketing at 3dot14 Mobitech Private Limited
+          </p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="slide w-full flex-shrink-0 px-6 sm:px-12 md:px-20">
+          <p class="text-gray-700 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed">
+            "Must say, a very user friendly platform with all the tools and features that we require to launch our partner program. 
+            The platform provides so many data points which help us optimize our relationship with our partners. And with their exceptional tech support, Tracqpulse is our key partner in growth."
+          </p>
+          <p class="text-[#019ad6] italic font-medium text-sm sm:text-base">
+            Sahil Sinha, CEO at Global Marketing & Commercial Services Company
+          </p>
+        </div>
+      </div>
+
+      <!-- Prev/Next Buttons (hidden on mobile) -->
+      <button 
+        onclick="prevTestimonial()" 
+        class="hidden sm:flex absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 bg-[#0a1a2f] text-white rounded-full w-8 h-8 sm:w-12 sm:h-12 items-center justify-center shadow hover:bg-[#019ad6] transition border-2 sm:border-4 border-white"
+      >
+        <i class="fa-solid fa-chevron-left text-xs sm:text-base"></i>
+      </button>
+      <button 
+        onclick="nextTestimonial()" 
+        class="hidden sm:flex absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 bg-[#0a1a2f] text-white rounded-full w-8 h-8 sm:w-12 sm:h-12 items-center justify-center shadow hover:bg-[#019ad6] transition border-2 sm:border-4 border-white"
+      >
+        <i class="fa-solid fa-chevron-right text-xs sm:text-base"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- FOOTER -->
+<footer class="bg-gray-50 border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 md:px-10 pt-12 pb-6">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <!-- Column 1 -->
+          <div
+            class="md:col-span-2  "
+           
+            
+          >
+            <h3 class="text-lg text-[#373737] mb-4">About Us</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              We are an experienced group of professionals with more than 20
+              years of experience in digital marketing, tracking technologies
+              and building enterprise platforms.
+            </p>
+            <p class="flex items-center text-gray-700 text-sm">
+              <i class="fa-solid fa-envelope text-gray-500 mr-2"></i>
+              <span>support@email.com</span>
+            </p>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <h3 class="text-lg mb-4 text-[#373737]">Resources</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="./blog.html" class="hover:text-[#019ad6]">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div>
+            <h3 class="text-lg  mb-4 text-[#373737]">Quick Links</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>
+                <a href="./terms-condition.html" class="hover:text-[#019ad6]">Terms & Condition</a>
+              </li>
+              <li>
+                <a href="./privacy-policies.html" class="hover:text-[#019ad6]">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="./user.html" class="hover:text-[#019ad6]">User Agreement</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div>
+            <h3 class="text-lg mb-4 text-[#373737]">Company</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="./company.html" class="hover:text-[#019ad6]">Who We Are</a></li>
+              <li><a href="./work.html" class="hover:text-[#019ad6]">Work With Us</a></li>
+              <li><a href="./contact-us.html" class="hover:text-[#019ad6]">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Text -->
+        <div
+          class="border-t border-gray-300 mt-8 pt-6 text-center text-sm text-gray-500 ">
+          Copyright @2025 <span class="font-semibold">Tracqpulse</span> | All
+          Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+
+
+  <script src="./Script/script.js"></script>
+
+</body>
+</html>
