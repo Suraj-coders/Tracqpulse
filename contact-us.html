@@ -9,6 +9,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./Style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
@@ -131,7 +135,7 @@
   <div class="max-w-6xl mx-auto px-6 lg:px-12 py-16 overflow-hidden lg:overflow-none">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
       <!-- Left Contact Info -->
-      <div >
+      <div class="wow animate__slideInLeft" data-wow-duration="1s">
         <h3 class="text-2xl font-normal mb-4 text-[#2f2f2f]">
           Love to Hear From You
         </h3>
@@ -161,7 +165,7 @@
       </div>
 
       <!-- Right Contact Form -->
-    <div>
+    <div class="wow animate__slideInRight" data-wow-duration="1s">
       
       <p id="form-success" class="text-green-600 font-semibold text-sm mb-2 hidden">
         ✅ Your message has been sent successfully!
@@ -240,7 +244,11 @@
         <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
           <!-- Column 1 -->
           <div
-            class="md:col-span-2" >
+            class="md:col-span-2  wow animate__animated animate__fadeInDown"
+            data-wow-delay="0.3s"
+            data-wow-offset="60"
+            
+          >
             <h3 class="text-lg text-[#373737] mb-4">About Us</h3>
             <p class="text-gray-600 text-sm mb-4">
               We are an experienced group of professionals with more than 20
@@ -254,7 +262,12 @@
           </div>
 
           <!-- Column 2 -->
-          <div>
+          <div
+            class="wow animate__animated animate__fadeInDown ps-0 lg:ps-[25px]"
+            data-wow-delay="1.2s"
+            data-wow-offset="70"
+            
+          >
             <h3 class="text-lg mb-4 text-[#373737]">Resources</h3>
             <ul class="space-y-2 text-gray-600 text-sm">
               <li><a href="./blog.html" class="hover:text-[#019ad6]">Blog</a></li>
@@ -262,7 +275,12 @@
           </div>
 
           <!-- Column 3 -->
-          <div>
+          <div
+            class="wow animate__animated animate__fadeInDown"
+            data-wow-delay="1.2s"
+            data-wow-offset="70"
+            
+          >
             <h3 class="text-lg  mb-4 text-[#373737]">Quick Links</h3>
             <ul class="space-y-2 text-gray-600 text-sm">
               <li>
@@ -278,7 +296,12 @@
           </div>
 
           <!-- Column 4 -->
-          <div>
+          <div
+            class="wow animate__animated animate__fadeInDown"
+            data-wow-delay="1.5s"
+            data-wow-offset="70"
+            
+          >
             <h3 class="text-lg mb-4 text-[#373737]">Company</h3>
             <ul class="space-y-2 text-gray-600 text-sm">
               <li><a href="./company.html" class="hover:text-[#019ad6]">Who We Are</a></li>
@@ -298,7 +321,11 @@
     </footer>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     
+    <script>
+      new WOW().init();
+    </script>
     <script src="./Script/script.js"></script>
     <script src="./Script/email.js"></script>
   </body>

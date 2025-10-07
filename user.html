@@ -6,7 +6,11 @@
   <title>Tracqpulse </title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./Style/style.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+   <link rel="stylesheet" href="./Style/style.css">
 </head>
 <body class="bg-white">
 
@@ -282,7 +286,10 @@
         <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
           <!-- Column 1 -->
           <div
-            class="md:col-span-2" >
+            class="md:col-span-2  wow animate__animated animate__fadeInDown"
+            data-wow-delay="0.3s"
+            
+          >
             <h3 class="text-lg text-[#373737] mb-4">About Us</h3>
             <p class="text-gray-600 text-sm mb-4">
               We are an experienced group of professionals with more than 20
@@ -296,7 +303,11 @@
           </div>
 
           <!-- Column 2 -->
-          <div>
+          <div
+            class="wow animate__animated animate__fadeInDown ps-0 lg:ps-[25px]"
+            data-wow-delay="1.2s"
+            
+          >
             <h3 class="text-lg mb-4 text-[#373737]">Resources</h3>
             <ul class="space-y-2 text-gray-600 text-sm">
               <li><a href="./blog.html" class="hover:text-[#019ad6]">Blog</a></li>
@@ -304,7 +315,11 @@
           </div>
 
           <!-- Column 3 -->
-          <div>
+          <div
+            class="wow animate__animated animate__fadeInDown"
+            data-wow-delay="1.2s"
+            
+          >
             <h3 class="text-lg  mb-4 text-[#373737]">Quick Links</h3>
             <ul class="space-y-2 text-gray-600 text-sm">
               <li>
@@ -320,7 +335,11 @@
           </div>
 
           <!-- Column 4 -->
-          <div>
+          <div
+            class="wow animate__animated animate__fadeInDown"
+            data-wow-delay="1.7s"
+            
+          >
             <h3 class="text-lg mb-4 text-[#373737]">Company</h3>
             <ul class="space-y-2 text-gray-600 text-sm">
               <li><a href="./company.html" class="hover:text-[#019ad6]">Who We Are</a></li>
@@ -340,7 +359,11 @@
     </footer>
 
     <script src="./Script/script.js"></script>
-     
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+   
+    <script>
+      new WOW().init();
+    </script>
     
 
 

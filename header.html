@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tracqpulse Header</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 left-0 w-full bg-white shadow-sm z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-3 md:px-6  h-[70px]">
+
+      <!-- Logo -->
+       <a href="#" class="flex items-center flex-shrink-0">
+        <img src="https://tracqpulse.com/public/frontend/img/logo.png" alt="Tracqpulse" class="h-[45px] w-auto max-w-[250px]">
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center space-x-8 font-medium">
+        <a href="#" class="text-[#019ad6]">Home</a>
+        <a href="#" class="hover:text-[#019ad6]">Features</a>
+        <a href="#" class="hover:text-[#019ad6]">Pricing</a>
+
+        <!-- Resources -->
+        <div class="relative group">
+          <button class="hover:text-[#019ad6] flex items-center h-20">
+            Resources
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute top-[75px] left-0 hidden group-hover:flex flex-col bg-white shadow-lg rounded-md w-44 opacity-0 group-hover:opacity-100 transition-all duration-200">
+            <a href="#" class="px-3 py-2 text-gray-700 hover:text-[#019ad6] bg-gray-50">Blog</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-[#019ad6]">Contact Us</a>
+
+        <!-- Company -->
+        <div class="relative group">
+          <button class="hover:text-[#019ad6] flex items-center h-20">
+            Company
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute top-[75px] left-0 hidden group-hover:flex flex-col bg-white shadow-lg rounded-md w-48 opacity-0 group-hover:opacity-100 transition-all duration-200">
+            <a href="#" class="px-4 py-2 text-gray-700 hover:text-[#019ad6] bg-gray-50">Who We Are</a>
+            <a href="#" class="px-4 py-2 text-gray-700 hover:text-[#019ad6] bg-gray-50">Work With Us</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hamburger -->
+      <button id="menu-toggle" aria-expanded="false" class="md:hidden ml-auto mr-2 grid gap-1">
+        <span class="bar block w-6 h-0.5 bg-orange-500"></span>
+        <span class="bar block w-6 h-0.5 bg-orange-500"></span>
+        <span class="bar block w-6 h-0.5 bg-orange-500"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu  -->
+    <div id="mobile-menu"
+         class="md:hidden absolute inset-x-0 top-full bg-white border-t border-gray-200 shadow-md
+                transform origin-top scale-y-0 opacity-0 pointer-events-none
+                transition-all duration-300 ease-out">
+      <div class="px-6 py-4 flex flex-col space-y-4 font-medium">
+        <a href="#" class="text-[#019ad6]">Home</a>
+        <a href="#" class="hover:text-[#019ad6]">Features</a>
+        <a href="#" class="hover:text-[#019ad6]">Pricing</a>
+
+       
+        <div>
+          <button onclick="toggleDropdown('resources')" class="flex items-center w-full text-left hover:text-[#019ad6]">
+            Resources
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="dropdown-resources" class="hidden flex-col pl-4">
+            <a href="#" class="block py-2 text-gray-700 hover:text-[#019ad6]">Blog</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-[#019ad6]">Contact Us</a>
+
+        <div>
+          <button onclick="toggleDropdown('company')" class="flex items-center w-full text-left hover:text-[#019ad6]">
+            Company
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div id="dropdown-company" class="hidden flex-col pl-4">
+            <a href="#" class="block py-2 text-gray-700 hover:text-[#019ad6]">Who We Are</a>
+            <a href="#" class="block py-2 text-gray-700 hover:text-[#019ad6]">Work With Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+ <footer class="bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+
+     
+        <div class="md:col-span-2">
+          <h3 class="text-lg font-semibold mb-4">About Us</h3>
+          <p class="text-gray-600 text-sm mb-4">
+            We are an experienced group of professionals with more than 20 years of
+            experience in digital marketing, tracking technologies and building
+            enterprise platforms.
+          </p>
+          <p class="flex items-center text-gray-700 text-sm">
+            <i class="fa-solid fa-envelope text-gray-500 mr-2 w-[13px] h-4 text-base leading-none relative top-[3px]"></i>
+            <span>support@tracqpulse.com</span>
+          </p>
+        </div>
+
+     
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Resources</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li><a href="#" class="hover:text-[#019ad6]">Blog</a></li>
+          </ul>
+        </div>
+
+   
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li><a href="#" class="hover:text-[#019ad6]">Terms & Condition</a></li>
+            <li><a href="#" class="hover:text-[#019ad6]">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-[#019ad6]">User Agreement</a></li>
+          </ul>
+        </div>
+
+      
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Company</h3>
+          <ul class="space-y-2 text-gray-600 text-sm">
+            <li><a href="#" class="hover:text-[#019ad6]">Who We Are</a></li>
+            <li><a href="#" class="hover:text-[#019ad6]">Work With Us</a></li>
+            <li><a href="#" class="hover:text-[#019ad6]">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-200 mt-8 pt-6 text-center text-sm text-gray-500">
+        Copyright @2025 <span class="font-semibold">Tracqpulse</span> | All Rights Reserved
+      </div>
+    </div>
+  </footer>
+   <h2 class="text-3xl md:text-4xl font-semibold text-gray-900">
+      A Robust Platform To Successfully <br /> Run and Grow Your Affiliate Business
+    </h2>
+    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+      Tracqpulse offers a robust SaaS platform to scale your affiliate business with ease.
+      
+    </p>
+    <p class="text-gray-600 max-w-3xl mx-auto">
+      The platform offers comprehensive advance analytics and real time tracking
+     
+    </p>
+    <p class="text-gray-600 max-w-3xl mx-auto">
+      capabilities to help affiliate optimize the network performance.
+    </p>
+
+    
+<section class="bg-white py-20 px-20">
+  <div class="container mx-auto px-6 lg:px-20 text-center">
+    
+    <!-- Title -->
+    <h2 class="text-3xl md:text-4xl font-semibold text-gray-900">
+      A Robust Platform To Successfully <br /> Run and Grow Your Affiliate Business
+    </h2>
+    <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+      Tracqpulse offers a robust SaaS platform to scale your affiliate business with ease.
+      
+    </p>
+    <p class="text-gray-600 max-w-3xl mx-auto">
+      The platform offers comprehensive advance analytics and real time tracking
+     
+    </p>
+    <p class="text-gray-600 max-w-3xl mx-auto">
+      capabilities to help affiliate optimize the network performance.
+    </p>
+
+    <!-- Cards -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <!-- Card 1 -->
+      <div class="group relative bg-white w-[455px] shadow-lg pt-[15px] pb-[25px] pl-[25px]  pr-[25px] text-center overflow-hidden transition hover:shadow-xl">
+       
+        <span class="absolute top-0 left-0 h-[3px] w-0 bg-blue-600 transition-all duration-500 group-hover:w-1/2"></span>
+        
+        <span class="absolute bottom-0 right-0 h-[3px] w-0 bg-blue-600 transition-all duration-500 group-hover:w-1/2"></span>
+
+        <div class="flex justify-center mb-6">
+          <img src="https://img.icons8.com/ios-filled/50/fa6400/advertising.png" alt="Advertiser" class="w-14 h-14">
+        </div>
+        <h3 class="text-md font-semibold text-gray-900 mb-4">For Advertiser</h3>
+        <p class="text-gray-600 text-sm mb-8 leading-relaxed">
+          Tracqpulse allows you to create a seamless experience for managing your affiliates and networks.
+          It has all the tools and features you need to optimize your affiliate business.
+          Contact us for 1 to 1 discussion.
+        </p>
+        <button class="bg-blue-600 hover:bg-blue-700 text-white  px-3 py-2 text-sm rounded-md shadow-md">
+          Contact Us
+        </button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group relative bg-white w-[455px] shadow-lg pt-[15px] pb-[25px] py-[25px] pl-[25px]  pr-[25px] text-center overflow-hidden transition hover:shadow-xl">
+        
+        <span class="absolute top-0 left-0 h-[3px] w-0 bg-blue-600 transition-all duration-500 group-hover:w-1/2"></span>
+       
+        <span class="absolute bottom-0 right-0 h-[3px] w-0 bg-blue-600 transition-all duration-500 group-hover:w-1/2"></span>
+
+        <div class="flex justify-center mb-4">
+          <img src="https://img.icons8.com/ios-filled/50/fa6400/network.png" alt="Affiliate Network" class="w-14 h-14">
+        </div>
+        <h3 class="text-md font-semibold text-gray-900 mb-4">For Affiliate Network</h3>
+        <p class="text-gray-600 mb-8 text-sm leading-relaxed">
+          OffersTarget provides you with a robust and scalable solution for managing your offers
+          and growing publishers. Streamline your payouts to build trust with your publishers.
+          Contact us for 1 to 1 discussion.
+        </p>
+        <button class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 text-sm rounded-md shadow-md">
+          Contact Us
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="bg-[#fbfbfb] py-5 lg:py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
+    
+    <!-- Left Content -->
+    <div class="flex-1 mb-4">
+      <h1 class="text-2xl lg:text-[42px] leading-snug font-semibold text-[#202020] mb-6">
+        Tracqpulse: The <br>
+        Leading Performance <br>
+        Marketing Platform
+      </h1>
+      <p class="text-[#6b6b6b] text-md md:text-lg mb-5 leading-relaxed">
+        Tracqpulse is an enterprise class performance marketing platform <br class="hidden lg:block">
+        to manage your affiliate business with ease.
+      </p>
+      <p class="text-[#6b6b6b] text-md md:text-lg mb-8 leading-relaxed">
+        Improve your business conversions with real time smart insights, <br class="hidden lg:block">
+        powered with AI backed feature and advance anti-fraud system.
+      </p>
+      <button class="bg-[#019ad6] text-white px-4 md:px-8 py-2 md:py-3 rounded-md font-semibold shadow hover:bg-[#0284b3] transition wow animate__animated animate__fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" >
+        Get Started Now →
+      </button>
+    </div>
+
+    <!-- Right Rotating Section -->
+    <div class="flex-1 relative flex items-center justify-center">
+      <div class="relative w-60 h-60 md:w-80 md:h-80 animate-spin-slow rounded-full flex items-center justify-center border border-dashed border-[#019ad6]/40">
+        
+        <!-- Icon Boxes -->
+        <div class="absolute -top-7 left-1/2 -translate-x-1/2 p-4 ">
+          <img src="icon1.svg" alt="icon" class="w-7 h-7">
+        </div>
+        <div class="absolute top-1/4 -left-7 ">
+          <img src="icon2.svg" alt="icon" class="w-7 h-7">
+        </div>
+        <div class="absolute bottom-1/4 -left-7 ">
+          <img src="icon3.svg" alt="icon" class="w-7 h-7">
+        </div>
+        <div class="absolute bottom-1/4 -right-7 ">
+          <img src="icon4.svg" alt="icon" class="w-7 h-7">
+        </div>
+        <div class="absolute top-1/4 -right-7 ">
+          <img src="icon5.svg" alt="icon" class="w-7 h-7">
+        </div>
+        <div class="absolute -bottom-7 left-1/2 -translate-x-1/2 p-4 ">
+          <img src="icon6.svg" alt="icon" class="w-7 h-7">
+        </div>
+      </div>
+
+      <!-- Center Card -->
+      <div class="absolute w-72 p-6 text-center">
+        <h3 class="text-md md:text-xl font-semibold mb-3 text-[#222]">
+          Robust and Secure Tracking
+        </h3>
+        <p class="text-[#666] ttext-sm md:text-base leading-relaxed">
+          Reliable and accurate tracking mechanism that is absolutely hack-proof 
+          and creates a comprehensive picture of your campaign journey.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="bg-[#fbfbfb] py-10 lg:py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
+    
+    <!-- Left Content -->
+    <div class="flex-1 mb-4">
+      <h1 class="text-2xl lg:text-[42px] leading-snug font-semibold text-[#202020] mb-6">
+        Tracqpulse: The <br>
+        Leading Performance <br>
+        Marketing Platform
+      </h1>
+      <p class="text-[#6b6b6b] text-md md:text-lg mb-5 leading-relaxed">
+        Tracqpulse is an enterprise class performance marketing platform <br class="hidden lg:block">
+        to manage your affiliate business with ease.
+      </p>
+      <p class="text-[#6b6b6b] text-md md:text-lg mb-8 leading-relaxed">
+        Improve your business conversions with real time smart insights, <br class="hidden lg:block">
+        powered with AI backed feature and advance anti-fraud system.
+      </p>
+      <button class="bg-[#019ad6] text-white px-4 md:px-8 py-2 md:py-3 rounded-md font-semibold shadow hover:bg-[#0284b3] transition">
+        Get Started Now →
+      </button>
+    </div>
+
+    <!-- Right Rotating Section -->
+    <div class="flex-1 relative flex items-center justify-center">
+      <!-- Rotating orbit -->
+      <div class="orbit relative w-72 h-72 md:w-96 md:h-96 rounded-full border border-dashed border-[#019ad6]/90 animate-spin-slow">
+        
+        
+        <!-- Icons rotating around -->
+        <div class="orbit-item" data-tab="1">
+          <div class="bg-white p-4 rounded-xl shadow-md flex items-center justify-center">
+            <img src="https://tracqpulse.com/public/frontend/img/insight.png" class="w-8 h-8">
+          </div>
+        </div>
+        <div class="orbit-item" data-tab="2">
+          <div class="bg-white p-4 rounded-xl shadow-md flex items-center justify-center">
+            <img src="https://tracqpulse.com/public/frontend/img/tracking.png" class="w-8 h-8">
+          </div>
+        </div>
+        <div class="orbit-item" data-tab="3">
+          <div class="bg-white p-4 rounded-xl shadow-md flex items-center justify-center">
+            <img src="https://tracqpulse.com/public/frontend/img/links.png" class="w-8 h-8">
+          </div>
+        </div>
+        <div class="orbit-item" data-tab="4">
+          <div class="bg-white p-4 rounded-xl shadow-md flex items-center justify-center">
+            <img src="https://tracqpulse.com/public/frontend/img/fraud.png" class="w-8 h-8">
+          </div>
+        </div>
+        <div class="orbit-item" data-tab="5">
+          <div class="bg-white p-4 rounded-xl shadow-md flex items-center justify-center">
+            <img src="https://tracqpulse.com/public/frontend/img/Infra.png" class="w-8 h-8">
+          </div>
+        </div>
+        <div class="orbit-item" data-tab="6">
+          <div class="bg-white p-4 rounded-xl shadow-md flex items-center justify-center">
+            <img src="https://tracqpulse.com/public/frontend/img/Advert.png" class="w-8 h-8">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Center Card -->
+      <div class="absolute w-72 p-6 text-center">
+        <div class="tab-content" id="tab-1">
+          <h3 class="text-lg md:text-xl font-semibold mb-3 text-[#222]">Real-time Smart Insights</h3>
+          <p class="text-[#666] text-sm md:text-base leading-relaxed">
+            Detailed compilation of granular data and in-depth information to optimize campaigns.
+          </p>
+        </div>
+        <div class="tab-content hidden" id="tab-2">
+          <h3 class="text-lg md:text-xl font-semibold mb-3 text-[#222]">Robust and Secure Tracking</h3>
+          <p class="text-[#666] text-sm md:text-base leading-relaxed">
+            Reliable, hack-proof tracking with full campaign journey visualization.
+          </p>
+        </div>
+        <div class="tab-content hidden" id="tab-3">
+          <h3 class="text-lg md:text-xl font-semibold mb-3 text-[#222]">Smart Links</h3>
+          <p class="text-[#666] text-sm md:text-base leading-relaxed">
+            Automate and compile links in one place to easily measure growth.
+          </p>
+        </div>
+        <div class="tab-content hidden" id="tab-4">
+          <h3 class="text-lg md:text-xl font-semibold mb-3 text-[#222]">Fraud Detection</h3>
+          <p class="text-[#666] text-sm md:text-base leading-relaxed">
+            AI fraud detection safeguards campaigns from fake activities & profiles.
+          </p>
+        </div>
+        <div class="tab-content hidden" id="tab-5">
+          <h3 class="text-lg md:text-xl font-semibold mb-3 text-[#222]">Infinite Scalability</h3>
+          <p class="text-[#666] text-sm md:text-base leading-relaxed">
+            99.9% uptime servers with distributed networks for reliable scalability.
+          </p>
+        </div>
+        <div class="tab-content hidden" id="tab-6">
+          <h3 class="text-lg md:text-xl font-semibold mb-3 text-[#222]">Affiliates & Advertisers Management</h3>
+          <p class="text-[#666] text-sm md:text-base leading-relaxed">
+            Tailored, user-friendly platform to maximize campaign results hassle-free.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+  .holderCircle {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    margin: 0 auto;
+    overflow: visible;
+    
+  }
+  
+  .dotCircle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1.5px dashed #019ad6;
+    animation: spin 30s linear infinite;
+  }
+  
+  .itemDot {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #019ad6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  }
+  
+  .itemDot:hover, .itemDot.active {
+    box-shadow: 0 0 10px #019ad6;
+    border-color: #0284b3;
+  }
+  
+  .itemDot img {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+  }
+  
+  .itemDot1 { transform: translate(-50%, -50%) rotate(0deg) translateX(190px) rotate(0deg); }
+  .itemDot2 { transform: translate(-50%, -50%) rotate(60deg) translateX(190px) rotate(-60deg); }
+  .itemDot3 { transform: translate(-50%, -50%) rotate(120deg) translateX(190px) rotate(-120deg); }
+  .itemDot4 { transform: translate(-50%, -50%) rotate(180deg) translateX(190px) rotate(-180deg); }
+  .itemDot5 { transform: translate(-50%, -50%) rotate(240deg) translateX(190px) rotate(-240deg); }
+  .itemDot6 { transform: translate(-50%, -50%) rotate(300deg) translateX(190px) rotate(-300deg); }
+  
+  .contentCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+  }
+  
+  .CirItem {
+    display: none;
+    animation: fadeIn 1s;
+  }
+  
+  .CirItem.active {
+    display: block;
+  }
+  
+  .CirItem h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #202020;
+    text-align: center;
+  }
+  
+  .CirItem p {
+    font-size: 14px;
+    color: #6b6b6b;
+    text-align: center;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @media (max-width: 480px) {
+    .holderCircle {
+        width: 250px;
+        height: 250px;
+    
+    }
+    .dotCircle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px dashed #019ad6;
+    animation: spin 30s linear infinite;
+  }
+
+    .itemDot {
+        width: 40px;
+        height: 40px;
+    }
+
+    .itemDot img {
+        padding: 10px;
+    }
+
+    /* Repositioning for very small screens */
+    .itemDot1 { transform: translate(-50%, -50%) rotate(0deg) translateX(125px) rotate(0deg); }
+    .itemDot2 { transform: translate(-50%, -50%) rotate(60deg) translateX(125px) rotate(-60deg); }
+    .itemDot3 { transform: translate(-50%, -50%) rotate(120deg) translateX(125px) rotate(-120deg); }
+    .itemDot4 { transform: translate(-50%, -50%) rotate(180deg) translateX(125px) rotate(-180deg); }
+    .itemDot5 { transform: translate(-50%, -50%) rotate(240deg) translateX(125px) rotate(-240deg); }
+    .itemDot6 { transform: translate(-50%, -50%) rotate(300deg) translateX(125px) rotate(-300deg); }
+
+    .contentCircle {
+        width: 180px;
+        height: 180px;
+        padding: 5px;
+    }
+
+    
+    .CirItem h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 0.95;
+    color: #202020;
+    text-align: center;
+  }
+  
+  .CirItem p {
+    font-size: 11px;
+    color: #6b6b6b;
+    text-align: center;
+  }
+}
+</style>
+
+  <!-- HERO SECTION -->
+<section class="bg-[#fbfbfb] py-8 lg:py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
+    
+    <div class="flex-1 mb-4">
+      <h1 class="text-2xl lg:text-[42px] leading-snug font-semibold text-[#202020] mb-6">
+        Tracqpulse: The <br>
+        Leading Performance <br>
+        Marketing Platform
+      </h1>
+      <p class="text-[#6b6b6b] text-md md:text-lg mb-5 leading-relaxed wow animate__animated animate__fadeInRight" data-wow-delay="0.3s" data-wow-duration="1s">
+        Tracqpulse is an enterprise class performance marketing platform <br class="hidden lg:block">
+        to manage your affiliate business with ease.
+      </p>
+      <p class="text-[#6b6b6b] text-md md:text-lg mb-8 leading-relaxed wow animate__animated animate__fadeInRight" data-wow-delay="0.3s" data-wow-duration="1s">
+        Improve your business conversions with real time smart insights, <br class="hidden lg:block">
+        powered with AI backed feature and advance anti-fraud system.
+      </p>
+      <button class="bg-[#019ad6] text-white px-4 md:px-8 py-2 md:py-3 rounded-md font-semibold shadow hover:bg-[#0284b3] transition wow animate__animated animate__fadeInUp" data-wow-delay="0.3s" data-wow-duration="1s" >
+        Get Started Now →
+      </button>
+    </div>
+
+    <div class="flex-1 relative flex items-center justify-center mb-8 lg:mb-0">
+      <div class="holderCircle  wow animate__animated animate__fadeInRight" data-wow-delay="0.3s" data-wow-duration="1s">
+        <div class="dotCircle">
+          <span class="itemDot itemDot1 active" data-tab="1">
+            <img src="https://tracqpulse.com/public/frontend/img/insight.png" alt="Insight Icon">
+            <span class="forActive"></span>
+          </span>
+          <span class="itemDot itemDot2" data-tab="2">
+            <img src="https://tracqpulse.com/public/frontend/img/tracking.png" alt="Tracking Icon">
+            <span class="forActive"></span>
+          </span>
+          <span class="itemDot itemDot3" data-tab="3">
+            <img src="https://tracqpulse.com/public/frontend/img/links.png" alt="Links Icon">
+            <span class="forActive"></span>
+          </span>
+          <span class="itemDot itemDot4" data-tab="4">
+            <img src="https://tracqpulse.com/public/frontend/img/fraud.png" alt="Fraud Icon">
+            <span class="forActive"></span>
+          </span>
+          <span class="itemDot itemDot5" data-tab="5">
+            <img src="https://tracqpulse.com/public/frontend/img/Infra.png" alt="Infrastructure Icon">
+            <span class="forActive"></span>
+          </span>
+          <span class="itemDot itemDot6" data-tab="6">
+            <img src="https://tracqpulse.com/public/frontend/img/Advert.png" alt="Advertisers Icon">
+            <span class="forActive"></span>
+          </span>
+        </div>
+
+        <div class="contentCircle ">
+          <div class="CirItem title-box active CirItem1">
+            <h2 class="title">Real-time Smart Insights</h2>
+            <p class="wow animate__animated animate__fadeInRight" data-wow-delay="0.8s" data-wow-duration="1s">Detailed compilation of granular data and in-depth information to help you optimize your campaign activities, analyse the performance better and plan for your future campaigns.</p>
+          </div>
+          <div class="CirItem title-box CirItem2 ">
+            <h2 class="title">Robust and Secure Tracking </h2>
+            <p class="wow animate__animated animate__fadeInRight" data-wow-delay="0.8s" data-wow-duration="1s">Reliable and accurate tracking mechanism that is absolutely hack-proof and creates a comprehensive picture of your campaign journey.</p>
+          </div>
+          <div class="CirItem title-box CirItem3 ">
+            <h2 class="title">Smart Links</h2>
+            <p class="wow animate__animated animate__fadeInRight" data-wow-delay="0.8s" data-wow-duration="1s">At Tracqpulse, we prioritise the convenience and ease of affiliate marketing before anything. Introducing smart links to automate and compile all the links to measure campaign growth.</p>
+          </div>
+          <div class="CirItem title-box CirItem4 ">
+            <h2 class="title">Fraud Detection</h2>
+            <p class="wow animate__animated animate__fadeInRight" data-wow-delay="0.8s" data-wow-duration="1s">Our advanced AI supported fraud detection mechanism is designed to safeguard your marketing campaigns from fraud partner profiles, fraud partner activities or any other deceitful activities.</p>
+          </div>
+          <div class="CirItem title-box CirItem5 ">
+            <h2 class="title">Infinite Scalability Infrastructure</h2>
+            <p class="wow animate__animated animate__fadeInRight" data-wow-delay="0.8s" data-wow-duration="1s">Our state-of-the-art infrastructure with 99.9% uptime server supports geographically distributed networks to allow highly reliable scalability.</p>
+          </div>
+          <div class="CirItem title-box CirItem6 ">
+            <h2 class="title">Affiliates & Advertisers Management</h2>
+            <p class="wow animate__animated animate__fadeInRight" data-wow-delay="0.8s" data-wow-duration="1s">We brings the learning curve down by providing a tailor-made user friendly platform to make sure that you focus only on making the most out of your partner marketing campaigns without any hassle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const dotItems = document.querySelectorAll(".itemDot");
+    const cirItems = document.querySelectorAll(".CirItem");
+    let rotationInterval;
+    let isTransitioning = false;
+
+    cirItems[0].classList.add("active");
+    
+   
+    function changeTab(index) {
+        if (isTransitioning) return; 
+        isTransitioning = true; 
+
+        
+        dotItems.forEach(dot => dot.classList.remove("active"));
+        cirItems.forEach(cir => cir.classList.remove("active"));
+
+        
+        dotItems[index].classList.add("active");
+        cirItems[index].classList.add("active");
+
+        
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 500); cks
+    }
+
+    function startAutoRotation() {
+        let currentTab = 0;
+        rotationInterval = setInterval(() => {
+            currentTab = (currentTab + 1) % dotItems.length;
+            changeTab(currentTab);
+        }, 5000);
+    }
+
+    startAutoRotation();
+
+    dotItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+         
+            clearInterval(rotationInterval);
+
+            changeTab(index);
+            
+            setTimeout(startAutoRotation, 5000); 
+        });
+    });
+});
+  
+  <footer class="bg-gray-50 border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-4 md:px-10 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <!-- Column 1 -->
+          <div
+            class="md:col-span-2 pr-[54px] wow animate__animated animate__fadeInDown"
+            data-wow-delay="0.3s"
+            data-wow-offset="60"
+            
+          >
+            <h3 class="text-lg font-semibold mb-4">About Us</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              We are an experienced group of professionals with more than 20
+              years of experience in digital marketing, tracking technologies
+              and building enterprise platforms.
+            </p>
+            <p class="flex items-center text-gray-700 text-sm">
+              <i class="fa-solid fa-envelope text-gray-500 mr-2"></i>
+              <span>support@tracqpulse.com</span>
+            </p>
+          </div>
+
+          <!-- Column 2 -->
+          <div
+            class="wow animate__animated animate__fadeInDown"
+            data-wow-delay="1.2s"
+            data-wow-offset="70"
+            
+          >
+            <h3 class="text-lg font-semibold mb-4">Resources</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-[#019ad6]">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div
+            class="wow animate__animated animate__fadeInDown"
+            data-wow-delay="1.2s"
+            data-wow-offset="70"
+            
+          >
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li>
+                <a href="#" class="hover:text-[#019ad6]">Terms & Condition</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#019ad6]">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-[#019ad6]">User Agreement</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div
+            class="wow animate__animated animate__fadeInDown"
+            data-wow-delay="1.7s"
+            data-wow-offset="70"
+            
+          >
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li><a href="#" class="hover:text-[#019ad6]">Who We Are</a></li>
+              <li><a href="#" class="hover:text-[#019ad6]">Work With Us</a></li>
+              <li><a href="#" class="hover:text-[#019ad6]">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Text -->
+        <div
+          class="border-t border-gray-200 mt-8 pt-6 text-center text-sm text-gray-500 ">
+          Copyright @2025 <span class="font-semibold">Tracqpulse</span> | All
+          Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+
+
+  <script src="./script.js"></script>
+
+  
+
+</body>
+</html>

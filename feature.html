@@ -6,7 +6,11 @@
   <title>Tracqpulse - Features</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./Style/style.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+   <link rel="stylesheet" href="./Style/style.css">
 </head>
 <body class="bg-white">
 
@@ -124,8 +128,8 @@
       <!-- Left Column -->
       <div class="space-y-6">
         <div
-          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center"
-         
+          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center wow animate__animated animate__fadeInLeft"
+          data-wow-delay="0.3s"
         >
           <div>
             <img src="./assets/insight.png" alt="" width="125" height="100" />
@@ -140,8 +144,8 @@
           </div>
         </div>
 
-          <div class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center"
-          >
+          <div class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center wow animate__animated animate__fadeInLeft"
+          data-wow-delay="0.6s">
           <div>
              <img src="./assets/fraud.png" alt="" width="125" height="100">
           </div>
@@ -154,8 +158,8 @@
           </div>
         </div>
         <div
-          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center"
-          
+          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center wow animate__animated animate__fadeInLeft"
+          data-wow-delay="0.9s"
         >
           <div>
             <img src="./assets/links.png" alt="" width="90" height="90">
@@ -173,16 +177,16 @@
 
       
       <!-- Center Dashboard -->
-<div class="flex items-center justify-center"
-     >
+<div class="flex items-center justify-center wow animate__animated animate__fadeInDown overflow-hidden"
+     data-wow-delay="0.6s">
   <img src="./assets/db-bg.jpg" alt="Dashboard" class="shadow-lg rounded-lg max-w-full lg:max-w-2xl w-full">
 </div>
 
       <!-- Right Column -->
       <div class="space-y-6">
         <div
-          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center"
-         
+          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center wow animate__animated animate__fadeInRight"
+          data-wow-delay="0.3s"
         >
           <div>
              <img src="./assets/tracking.png" alt="" width="90" height="90">
@@ -196,8 +200,8 @@
           </div>
         </div>
             <div
-          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center"
-         
+          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center wow animate__animated animate__fadeInRight"
+          data-wow-delay="0.6s"
         >
           <div>
             <img src="./assets/Infra.png" alt="" width="90" height="90">
@@ -211,8 +215,8 @@
           </div>
         </div>
         <div
-          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center"
-          
+          class="bg-white border border-gray-200 shadow-sm rounded-md p-2 flex gap-5 items-center justify-center wow animate__animated animate__fadeInRight"
+          data-wow-delay="0.9s"
         >
           <div>
             <img src="./assets/Advert.png" alt="" width="90" height="90">
@@ -229,14 +233,20 @@
   </div>
 </section>
 
+
+
+
 <footer class="bg-gray-50 border-t border-gray-200">
       <div class="max-w-7xl mx-auto px-4 md:px-10 pt-12 pb-6">
         <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
           <!-- Column 1 -->
           <div
-            class="md:col-span-2">
+            class="md:col-span-2  wow animate__animated animate__fadeInDown"
+            data-wow-delay="0.3s"
+            
+          >
             <h3 class="text-lg text-[#373737] mb-4">About Us</h3>
-            <p class="text-gray-600 text-sm mb-4">
+            <p class="text-[#555555] text-sm mb-4">
               We are an experienced group of professionals with more than 20
               years of experience in digital marketing, tracking technologies
               and building enterprise platforms.
@@ -248,17 +258,25 @@
           </div>
 
           <!-- Column 2 -->
-          <div>
+          <div
+            class="wow animate__animated animate__fadeInDown ps-0 lg:ps-[25px]"
+            data-wow-delay="1.2s"
+            
+          >
             <h3 class="text-lg mb-4 text-[#373737]">Resources</h3>
-            <ul class="space-y-2 text-gray-600 text-sm">
+            <ul class="space-y-2 text-[#555555] text-sm">
               <li><a href="./blog.html" class="hover:text-[#019ad6]">Blog</a></li>
             </ul>
           </div>
 
           <!-- Column 3 -->
-          <div>
+          <div
+            class="wow animate__animated animate__fadeInDown"
+            data-wow-delay="1.2s"
+            
+          >
             <h3 class="text-lg  mb-4 text-[#373737]">Quick Links</h3>
-            <ul class="space-y-2 text-gray-600 text-sm">
+            <ul class="space-y-2 text-[#555555] text-sm">
               <li>
                 <a href="./terms-condition.html" class="hover:text-[#019ad6]">Terms & Condition</a>
               </li>
@@ -272,9 +290,13 @@
           </div>
 
           <!-- Column 4 -->
-          <div>
+          <div
+            class="wow animate__animated animate__fadeInDown"
+            data-wow-delay="1.7s"
+            
+          >
             <h3 class="text-lg mb-4 text-[#373737]">Company</h3>
-            <ul class="space-y-2 text-gray-600 text-sm">
+            <ul class="space-y-2 text-[#555555] text-sm">
               <li><a href="./company.html" class="hover:text-[#019ad6]">Who We Are</a></li>
               <li><a href="./work.html" class="hover:text-[#019ad6]">Work With Us</a></li>
               <li><a href="./contact-us.html" class="hover:text-[#019ad6]">Contact Us</a></li>
@@ -292,7 +314,11 @@
     </footer>
 
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+   
+    <script>
+      new WOW().init();
+    </script>
     <script src="./Script/script.js"></script>
 
 </body>
